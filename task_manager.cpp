@@ -1,7 +1,3 @@
-//
-// Created by herbalchappal on 1/19/25.
-//
-
 #include "task_manager.h"
 
 TaskManager::TaskManager ()
@@ -45,6 +41,8 @@ TaskManager::Execute ()
 
         curr_task = vTasks->Dequeue ();
         pthread_mutex_unlock (&vMutex);
+
+        // execute curr_task;
     }
 }
 

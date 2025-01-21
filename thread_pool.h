@@ -16,6 +16,7 @@ private:
 static  void *          Wrapper         (void * pArg);
 
         pthread_t       vThreads        [NUM_THREADS];
+        tTask *         vTask;
 static  pthread_cond_t  vCond;
 static  pthread_mutex_t vMutex;
 };

@@ -11,10 +11,18 @@ ThreadPool::Wrapper (void * pArg)
     return nullptr;
 }
 
+void
+ThreadPool::Run (tTask * pTask)
+{
+    vTask = pTask;
+    
+}
+
 ThreadPool::ThreadPool (const pthread_mutex_t & pMutex, const pthread_cond_t & pCond)
 {
     vMutex = pMutex;
     vCond  = pCond;
+    vTask  = nullptr;
 
     for (size_t i=0; i<NUM_THREADS; ++i) {
 
